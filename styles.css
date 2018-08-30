@@ -7,13 +7,18 @@ body {
 
 /* Mobile first properties */
 
-/* Content except header */
+/* Content root except header */
 #app {
   padding-top: 56px;
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1024px;
   margin: 0 auto;
+  display: grid;
+
+  /* For mobile layout */
+  grid-template-rows: auto auto;
+  grid-template-columns: auto;
 }
 
 /* Global navigation */
@@ -35,6 +40,10 @@ main {
   box-sizing: border-box;
 }
 
+main {
+  padding: 12px 48px;
+}
+
 
 #side-nav,
 #news-container {
@@ -46,7 +55,8 @@ main {
 }
 
 main {
-  width: 100%;
+  grid-column: 1;
+  grid-row: 2;
   color: #212121;
   line-height: 150%;
 }
@@ -65,7 +75,6 @@ header {
   border-bottom: 1px solid rgba(20, 20, 20, 0.1);
   box-shadow: 0 0 8px rgba(20, 20, 20, 0.1);
   width: 100%;
-  padding: 0 36px;
   position: relative;
   position: fixed;
   z-index: 999;
@@ -84,18 +93,12 @@ header {
   font-size: 18px;
   margin: 0 auto;
   color: #fafafa;
-  max-width: 960px;
-  width: 100%;
+  max-width: calc(1024px - 48px);
+  width: calc(100% - 48px);
 }
 
 /* Tablets */
 @media (min-width: 768px) {
-  main,
-  #side-nav {
-    /* inline-block defeated me */
-    position: absolute;
-  }
-
   #side-nav ul {
     padding: 0;
     list-style: none;
@@ -125,9 +128,12 @@ header {
   }
 
   main {
-    display: inline-block;
-    width: 75%;
-    left: 25%;
+    grid-row: 1;
+    grid-column: main-start;
+  }
+
+  #app {
+    grid-template-columns: [nav-start] auto [main-start] auto;
   }
 }
 
@@ -135,15 +141,10 @@ header {
 @media (min-width: 1200px){
   /* News article list */
   #news-container {
-    position: absolute;
-    display: inline-block;
-    width: 20%;
-    right: 24px;
+    display: initial;
     padding: 0;
-  }
-
-  main {
-    width: 50%;
+    margin-right: 24px;
+    grid-column: [news-start];
   }
 
   /* News item */
@@ -162,5 +163,10 @@ header {
 
   #news-container article h3 {
     font-size: 16px;
+  }
+
+  #app {
+    grid-template-rows: main auto;
+    grid-template-columns: [nav-start] auto [main-start] auto [news-start] auto;
   }
 }
