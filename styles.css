@@ -7,10 +7,18 @@ body {
 
 /* Mobile first properties */
 
+#app {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 /* Global navigation */
 #side-nav {
   background: #311B92;
   color: #fafafa;
+
 }
 
 /* Nav item */
@@ -59,14 +67,18 @@ header {
   position: relative;
 }
 
+/* Header logo */
 #site-logo {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-weight: normal;
   font-size: 18px;
-  margin: 0;
+  margin: 0 auto;
   color: #fafafa;
+  max-width: 960px;
+  width: 100%;
 }
 
 /* Tablets */
@@ -97,7 +109,7 @@ header {
   #side-nav {
     display: inline-block;
     /* inline-block annonyance */
-    width: 20vw;
+    width: 20%;
     min-width: 200px;
   }
 
@@ -108,8 +120,8 @@ header {
 
   main {
     display: inline-block;
-    width: 75vw;
-    left: 25vw;
+    width: 75%;
+    left: 25%;
   }
 }
 
@@ -119,13 +131,13 @@ header {
   #news-container {
     position: absolute;
     display: inline-block;
-    width: 20vw;
+    width: 20%;
     right: 24px;
     padding: 0;
   }
 
   main {
-    width: 50vw;
+    width: 50%;
   }
 
   /* News item */
