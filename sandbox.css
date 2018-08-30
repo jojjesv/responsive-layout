@@ -1,0 +1,31 @@
+/* GRID SANDBOX */
+
+#grid-sandbox {
+  margin: 8px;
+  border: 2px dashed #E0E0E0;
+  height: 120px;
+}
+
+#grid-sandbox .grid-container {
+  grid-template-rows: 36px 8px 12px;
+  grid-template-areas: 50% 50%;
+  grid-template-areas:
+                    "top-l top-r"
+                    "l r"
+                    "bottom-l bottom-r";
+}
+
+#grid-sandbox .alpha {
+  grid-area: top-l;
+  background: #FF5722;
+}
+
+#grid-sandbox .bravo {
+  grid-area: bottom-l;
+  background: #689F38;
+}
+
+#grid-sandbox .charlie {
+  grid-area: r;
+  background: #0091EA;
+}

@@ -21,6 +21,10 @@ body {
   grid-template-columns: auto;
 }
 
+.grid-container {
+  display: grid;
+}
+
 /* Global navigation */
 #side-nav {
   background: #311B92;
