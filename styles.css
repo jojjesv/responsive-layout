@@ -7,7 +7,9 @@ body {
 
 /* Mobile first properties */
 
+/* Content except header */
 #app {
+  padding-top: 56px;
   position: relative;
   width: 100%;
   max-width: 960px;
@@ -18,7 +20,6 @@ body {
 #side-nav {
   background: #311B92;
   color: #fafafa;
-
 }
 
 /* Nav item */
@@ -62,9 +63,12 @@ header {
   color: #fafafa;
   height: 56px;
   border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+  box-shadow: 0 0 8px rgba(20, 20, 20, 0.1);
   width: 100%;
   padding: 0 36px;
   position: relative;
+  position: fixed;
+  z-index: 999;
 }
 
 /* Header logo */
@@ -91,7 +95,6 @@ header {
     /* inline-block defeated me */
     position: absolute;
   }
-
 
   #side-nav ul {
     padding: 0;
