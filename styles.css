@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background: #fafafa;
+  min-width: 400px;;
+}
+
+/* Mobile first properties */
+
+/* Global navigation */
+#side-nav {
+  background: #311B92;
+  color: #fafafa;
+}
+
+/* Nav item */
+#side-nav ul li {
+  padding: 8px;
+  display: inline-block;
+}
+
+#side-nav,
+#news-container,
+main {
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+
+#side-nav,
+#news-container {
+  vertical-align: top;
+}
+
+#news-container {
+  display: none;
+}
+
+main {
+  width: 100%;
+  color: #212121;
+  line-height: 150%;
+}
+
+h1,
+h2 {
+  color: #616161;
+  font-weight: 300;
+  margin: 36px 0 8px 0;
+}
+
+header {
+  background: #1E88E5;
+  color: #fafafa;
+  height: 56px;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+  width: 100%;
+  padding: 0 36px;
+  position: relative;
+}
+
+#site-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0;
+  color: #fafafa;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  main,
+  #side-nav {
+    /* inline-block defeated me */
+    position: absolute;
+  }
+
+
+  #side-nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+
+  #side-nav ul li {
+    display: block;
+    cursor: pointer;
+    transition: transform 100ms ease-in;
+  }
+
+  #side-nav ul li:hover {
+    transform: translateX(8px);
+  }
+
+  #side-nav {
+    display: inline-block;
+    /* inline-block annonyance */
+    width: 20vw;
+    min-width: 200px;
+  }
+
+  #side-nav,
+  #news-container {
+    min-height: 100vh;
+  }
+
+  main {
+    display: inline-block;
+    width: 75vw;
+    left: 25vw;
+  }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 1200px){
+  /* News article list */
+  #news-container {
+    position: absolute;
+    display: inline-block;
+    width: 20vw;
+    right: 24px;
+    padding: 0;
+  }
+
+  main {
+    width: 50vw;
+  }
+
+  /* News item */
+  #news-container article {
+    color: #616161;
+    padding: 18px;
+    margin-top: 8px;
+    border-radius: 2px;
+    border-bottom: 2px solid #BDBDBD;
+    cursor: pointer;
+  }
+
+  #news-container article:hover {
+    opacity: 0.75;
+  }
+
+  #news-container article h3 {
+    font-size: 16px;
+  }
+}
